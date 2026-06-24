@@ -1,9 +1,6 @@
 ---
 title: Manage lifecycle workflows with Microsoft Security Copilot 
 description: Use Microsoft Security Copilot in the Microsoft Entra admin center to create lifecycle workflows for Joiner, Mover, and Leaver scenarios. Execute workflows on-demand and use workflow insights to monitor execution and troubleshoot as needed.
-author: cilwerner
-ms.author: cwerner
-manager: pmwongera
 ms.reviewer: ptyagi
 ms.date: 09/23/2025
 ms.update-cycle: 180-days
@@ -35,6 +32,11 @@ This article describes how to work with lifecycle workflows using Security Copil
 ## Launch Security Copilot in Microsoft Entra
 
 [!INCLUDE [Launch Security Copilot in Microsoft Entra](./includes/access-entra-copilot.md)]
+
+>[!NOTE]
+> If an action is blocked by insufficient permissions, a recommended role is displayed. You can use the following prompt in the Security Copilot chat to activate the required role. This is dependent on having an eligible role assignment that provides the necessary access.
+>
+> - *Activate the {required role} so that I can perform {the desired task}.* 
 
 ## Create step-by-step guidance for a new lifecycle workflow
 

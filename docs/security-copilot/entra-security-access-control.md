@@ -1,9 +1,6 @@
 ---
 title: Security and access control with Microsoft Security Copilot
 description: Use Microsoft Security Copilot in the Microsoft Entra admin center to manage roles, authentication methods, conditional access policies, and assess application risks.
-author: cilwerner
-ms.author: cwerner
-manager: pmwongera
 ms.reviewer: ptyagi
 ms.date: 09/23/2025
 ms.update-cycle: 180-days
@@ -40,6 +37,11 @@ This article describes how to use Microsoft Security Copilot to undertake a secu
 ## Launch Security Copilot in Microsoft Entra
 
 [!INCLUDE [Launch Security Copilot in Microsoft Entra](./includes/access-entra-copilot.md)]
+
+>[!NOTE]
+> If an action is blocked by insufficient permissions, a recommended role is displayed. You can use the following prompt in the Security Copilot chat to activate the required role. This is dependent on having an eligible role assignment that provides the necessary access.
+>
+> - *Activate the {required role} so that I can perform {the desired task}.* 
 
 ## Investigate and manage role assignments
 

@@ -1,9 +1,6 @@
 ---
 title: Microsoft Security Copilot scenarios in Microsoft Entra Internet and Private Access
 description: Learn how to use Microsoft Security Copilot with Microsoft Entra Internet Access and Private Access
-author: cilwerner
-ms.author: cwerner
-manager: pmwongera
 ms.reviewer: ptyagi
 ms.date: 09/23/2025
 ms.update-cycle: 180-days
@@ -36,6 +33,11 @@ Using Security Copilot, you can apply its capabilities with Global Secure Access
 ## Global Secure Access
 
 For example, as a security analyst or network administrator, you can use Security Copilot to investigate and monitor network traffic usage and behavior using natural language queries. You can analyze user, device, and branch network usage, identify network issues, and detect threats or policy violations in real time. As a result, your investigation process is streamlined and more effective. 
+
+>[!NOTE]
+> If an action is blocked by insufficient permissions, a recommended role is displayed. You can use the following prompt in the Security Copilot chat to activate the required role. This is dependent on having an eligible role assignment that provides the necessary access.
+>
+> - *Activate the {required role} so that I can perform {the desired task}.*
 
 ### Monitor data consumption and bandwidth usage
 

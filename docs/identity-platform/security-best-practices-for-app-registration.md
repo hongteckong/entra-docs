@@ -1,9 +1,7 @@
 ---
 title: Security best practices for application properties
 description: Learn about the best practices and general guidance for security related application properties in Microsoft Entra ID.
-author: OwenRichards1
 manager: pmwongera
-ms.author: owenrichards
 ms.date: 01/06/2023
 ms.reviewer: 
 ms.service: identity-platform
@@ -80,12 +78,6 @@ Consider the following guidance for redirect URIs:
 Scenarios that required **implicit flow** can now use **Auth code flow** to reduce the risk of compromise associated with implicit flow misuse. Under **Authentication** for the application in the Azure portal, a platform must be selected for the application and then the **Access tokens (used for implicit flows)** property can be set.
 
 :::image type="content" source="./media/application-registration-best-practices/implict-grant-flow.png" alt-text="Screenshot that shows where the implicit flow property is located.":::
-
-Consider the following guidance related to implicit flow:
-
-- Understand if [implicit flow is required](./v2-oauth2-implicit-grant-flow.md#suitable-scenarios-for-the-oauth2-implicit-grant). Don't use implicit flow unless explicitly required.
-- If the application was configured to receive access tokens using implicit flow, but doesn't actively use them, turn off the setting to protect from misuse.
-- Use separate applications for valid implicit flow scenarios.
 
 ## Application ID URI (also known as Identifier URI)
 

@@ -1,17 +1,10 @@
 ---
 title: QR code authentication method in Microsoft Entra ID 
 description: Learn about using QR code authentication method in Microsoft Entra ID to help improve and secure sign-in events for frontline workers.
-
-ms.service: entra-id
-ms.subservice: authentication
 ms.topic: concept-article
 ms.date: 07/24/2025
-
-ms.author: justinha
-author: aanjusingh
 contributors: minatoruan
 ms.reviewer: anjusingh
-manager: dougeby
 
 # Customer intent: As an identity administrator, I want to understand how to use QR code authentication in Microsoft Entra ID to improve and secure user sign-in events for frontline workers
 ---
@@ -139,7 +132,7 @@ For more information about how to optimize the sign-in experience or suppress ca
 - Custom tenant endpoint for sign in 
 - Configurable PIN protection policies that define account lockout threshold, duration, or PIN complexity
 
-## Known issue
+## Known limitation
 
 If you enable QR code authentication for a user, they need to sign-in with an existing authentication method before they can sign in with a QR code for the first time, or they see an **Incorrect QR code** error. 
 
@@ -156,4 +149,4 @@ The user needs to sign in with another method because the cached user authentica
 - [How to enable the QR code authentication method in Microsoft Entra ID](how-to-authentication-qr-code.md)
 - [Best practices to protect frontline workers](~/identity-platform/security-best-practices-for-frontline-workers.md)
 - [Manage your users with My Staff](~/identity/role-based-access-control/my-staff-configure.md)
-- [What authentication and verification methods are available in Microsoft Entra ID?](concept-authentication-methods.md)
+- [What authentication and verification methods are available in Microsoft Entra ID?](overview-authentication.md)

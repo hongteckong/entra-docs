@@ -2,15 +2,13 @@
 title: Sign in users in sample iOS (Swift) app by using native authentication
 description: Learn how to configure iOS (Swift) sample app to sign up, sign in, sign out and reset password scenarios using Microsoft Entra External ID.
 
-author: henrymbuguakiarie
 manager: pmwongera
 
-ms.author: henrymbugua
 ms.service: identity-platform
 
 ms.subservice: external
 ms.topic: how-to
-ms.date: 02/23/2024
+ms.date: 11/17/2025
 ms.custom:
 #Customer intent: As a dev, devops, I want to learn about how to configure native authentication iOS sample app to sign up, sign in, sign out and reset password scenarios using Microsoft Entra External ID.
 ---
@@ -104,6 +102,10 @@ In this section, you test email with password flow, with its variants such as, e
 ## Test call a protected API flow
 
 Use the steps in [Call a protected web API in a sample iOS mobile app by using native authentication](quickstart-native-authentication-ios-call-api.md) to call a protected web API from a sample Android mobile app.
+
+## Enable sign-in with an alias or username
+
+[!INCLUDE [Enable sign-in with an alias or username](./includes/native-auth-api/enable-username-signin.md)]
 
 ## Next steps 
 

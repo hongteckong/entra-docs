@@ -1,13 +1,8 @@
 ---
 title: Microsoft Entra provisioning to applications via PowerShell
 description: This document describes how to configure Microsoft Entra ID to provision users with external systems that offer Windows PowerShell based APIs.
-author: jenniferf-skc
-manager: pmwongera
-ms.service: entra-id
-ms.subservice: app-provisioning
 ms.topic: how-to
 ms.date: 04/09/2025
-ms.author: jfields
 ms.reviewer: arvinh
 ms.custom: sfi-image-nochange
 ---
@@ -395,3 +390,4 @@ Now that your attributes are mapped and users are assigned, you can test on-dema
 - [App provisioning](user-provisioning.md)
 - [ECMA Connector Host generic SQL connector](tutorial-ecma-sql-connector.md)
 - [ECMA Connector Host LDAP connector](on-premises-ldap-connector-configure.md)
+- [Discover identities in target applications with Account Discovery](how-to-account-discovery.md)

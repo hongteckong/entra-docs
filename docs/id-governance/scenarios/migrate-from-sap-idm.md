@@ -1,13 +1,9 @@
 ---
 title: Migrate identity management scenarios from SAP IDM to Microsoft Entra
 description: Learn the detailed steps for how to bring identities from SAP SuccessFactors and other sources into Microsoft Entra ID and provision those identities with access to SAP ECC, SAP S/4HANA, and other SAP and non-SAP applications, for organizations that were previously using SAP IDM.
-author: markwahl-msft
-manager: femila
 editor: markwahl-msft
-ms.service: entra-id-governance
 ms.topic: how-to
 ms.date: 08/25/2024
-ms.author: mwahl
 ms.reviewer: mwahl
 ---
 
@@ -101,7 +97,7 @@ Before migrating scenarios to a Microsoft Entra tenant, you should review the st
 
 In SAP IDM, the Identity Store represents identity data through entry types such as `MX_PERSON`, `MX_ROLE`, or `MX_PRIVILEGE`.
 
-* A person is represented in a Microsoft Entra ID tenant as a [User](~/fundamentals/how-to-create-delete-users.yml). If you have existing users who are not yet in Microsoft Entra ID, you can bring them into Microsoft Entra ID. First, if you have attributes on the existing users which are not part of the Microsoft Entra ID schema, then [extend the Microsoft Entra user schema with extension attributes](~/identity/app-provisioning/plan-sap-user-source-and-target.md#update-the-microsoft-entra-id-user-schema) for the additional attributes. Next, perform an upload to [bulk create the users in Microsoft Entra ID](~/identity/users/users-bulk-add.md) from a source, such as a CSV file. Then, [issue credentials to those new users](~/identity/app-provisioning/plan-sap-user-source-and-target.md#distribute-credentials-to-newly-created-microsoft-entra-users-or-windows-server-ad-users) so they can authenticate to Microsoft Entra ID.
+* A person is represented in a Microsoft Entra ID tenant as a [User](~/fundamentals/how-to-create-delete-users.md). If you have existing users who are not yet in Microsoft Entra ID, you can bring them into Microsoft Entra ID. First, if you have attributes on the existing users which are not part of the Microsoft Entra ID schema, then [extend the Microsoft Entra user schema with extension attributes](~/identity/app-provisioning/plan-sap-user-source-and-target.md#update-the-microsoft-entra-id-user-schema) for the additional attributes. Next, perform an upload to [bulk create the users in Microsoft Entra ID](~/identity/users/users-bulk-add.md) from a source, such as a CSV file. Then, [issue credentials to those new users](~/identity/app-provisioning/plan-sap-user-source-and-target.md#distribute-credentials-to-newly-created-microsoft-entra-users-or-windows-server-ad-users) so they can authenticate to Microsoft Entra ID.
 
 * A business role can be represented in Microsoft Entra ID Governance as an [Entitlement Management access package](~/id-governance/entitlement-management-access-package-create.md). You can [govern access to applications by migrating an organizational role model to Microsoft Entra ID Governance](~/id-governance/identity-governance-organizational-roles.md), which results in an access package for each business role. To automate the migration process, you can [use PowerShell to create access packages](~/id-governance/entitlement-management-access-package-create-app.md).
 
@@ -176,7 +172,7 @@ For step-by-step guidance on the identity lifecycle with SAP applications as the
 
 * If you are using SAP NetWeaver AS for Java with another LDAP directory as its data source, then you can configure [Microsoft Entra ID to provision users into LDAP directories](~/identity/app-provisioning/on-premises-ldap-connector-configure.md).
 
-After you configure provisioning for users into your SAP applications, you should enable Single sign-on for them. Microsoft Entra ID can serve as the identity provider and authentication authority for your SAP applications. Microsoft Entra ID can integrate with [SAP NetWeaver using SAML or OAuth](~/identity/saas-apps/sap-netweaver-tutorial.md). For more information on how to configure single sign-on to SAP SaaS and modern apps, see [enable SSO](~/id-governance/sap.md#enable-sso).
+After you configure provisioning for users into your SAP applications, you should enable Single sign-on for them. Microsoft Entra ID can serve as the identity provider and authentication authority for your SAP applications. Microsoft Entra ID can integrate with [SAP NetWeaver using SAML or OAuth](~/identity/saas-apps/sap-netweaver-tutorial.md). For more information on how to configure single sign-on to SAP SaaS and modern apps, see [enable SSO](~/id-governance/sap.md#enable-sso). You can also migrate the [access lifecycle management scenarios](#migrate-access-lifecycle-management-scenarios) from SAP IDM to Microsoft Entra.
 
 ### Provision to non-SAP systems
 
@@ -214,11 +210,11 @@ Microsoft Entra also supports end user self-service for [group management](~/ide
 
 ### Migrate access lifecycle management scenarios
 
-Organizations may have integrated SAP IDM with SAP AC, formerly SAP GRC, or SAP IAG for access approvals, risk assessments, separation of duties checks and other operations.
+Organizations may have integrated SAP IDM with SAP access governance for access approvals, risk assessments, separation of duties checks and other operations.
 
 Microsoft Entra includes multiple access lifecycle management technologies to enable organizations to bring their identity and access management scenarios to the cloud. The choice of technologies depends upon your organization's application requirements and Microsoft Entra licenses.
 
-* **Access management through Microsoft Entra ID security group management.** Traditional Windows Server AD-based applications relied upon checking membership of security groups for authorization. Microsoft Entra makes dynamic membership group available to applications via SAML claims, provisioning, or by [writing groups to Windows Server AD](~/identity/users/groups-write-back-portal.md). You can [manage access to SAP BTP applications](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276) using group memberships sent as claims in OpenID Connect to SAP Cloud Identity Services. SAP Cloud Identity Services can also read groups from Microsoft Entra ID via Graph, and provision those groups to other SAP applications.
+* **Access management through Microsoft Entra ID security group management.** Traditional Windows Server AD-based applications relied upon checking membership of security groups for authorization. Microsoft Entra makes dynamic membership group available to applications via SAML claims, provisioning, or by [writing groups to Windows Server AD](~/identity/users/groups-write-back-portal.md). You can [manage access to SAP BTP applications](https://community.sap.com/t5/technology-blogs-by-members/identity-and-access-management-with-microsoft-entra-part-i-managing-access/ba-p/13873276) using group memberships sent as claims in OpenID Connect to SAP Cloud Identity Services. You can also provision groups from Microsoft Entra to SAP Cloud Identity Services, and SAP Cloud Identity Services can then provision those groups as roles to other SAP applications.
 
   In Microsoft Entra, administrators can [manage dynamic membership groups](~//identity/users/groups-bulk-import-members.md), create [access reviews of dynamic membership group](~/id-governance/create-access-review.md), and enable [self-service group management](~/identity/users/groups-self-service-management.md). With self-service, the group owners can approve or deny membership requests and delegate control of dynamic membership groups. You can also use Privileged Identity Management (PIM) [for groups](~/id-governance/privileged-identity-management/groups-discover-groups.md) to manage just-in-time membership in the group or just-in-time ownership of the group.
 
@@ -228,7 +224,9 @@ Microsoft Entra includes multiple access lifecycle management technologies to en
 
   ![Entitlement management overview diagram](~/id-governance/media/entitlement-management-overview/elm-overview.png)
 
- * **Access management through Entitlement management and an external GRC product.** With Microsoft Entra integrations to [SAP access governance](https://learning.sap.com/learning-journeys/exploring-the-fundamentals-of-sap-system-security/discussing-access-governance-integration-scenarios-ac-iag-), to [Pathlock](https://pathlock.com/applications/microsoft-entra-id-governance/) and to other partner products, customers can take advantage of additional risk and fine-grained separation-of-duties checks enforced in those products, with access packages in Microsoft Entra ID Governance.
+* **Access management through Entitlement management integrated with SAP IAG**. In addition to assigning users to roles via group memberships provisioned through SAP Cloud Identity Services, you can also integrate Microsoft Entra entitlement management with SAP Cloud Identity Access Governance (IAG). This integration enables you to add SAP IAG business roles as resources in entitlement management catalogs, so you can grant users access to SAP applications through Microsoft Entra access packages. You can then automate role assignments in SAP IAG and downstream SAP applications, based on approvals in Microsoft Entra. For more information, see [Microsoft Entra SAP IAG integration (Preview)](~/id-governance/entitlement-management-sap-integration.md).
+
+* **Access management through Entitlement management and an external GRC product.** With Microsoft Entra integrations to [Pathlock](https://pathlock.com/applications/microsoft-entra-id-governance/) and to other partner products, customers can take advantage of additional risk and fine-grained separation-of-duties checks enforced in those products, with access packages in Microsoft Entra ID Governance.
 
 ### Use Microsoft Entra for reporting
 

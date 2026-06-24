@@ -1,9 +1,6 @@
 ---
 title: Enterprise user management with Microsoft Security Copilot
 description: Use Microsoft Security Copilot in the Microsoft Entra admin center to manage users, tenants, groups, using natural language queries.
-author: cilwerner
-ms.author: cwerner
-manager: pmwongera
 ms.reviewer: ptyagi
 ms.date: 09/23/2025
 ms.update-cycle: 180-days
@@ -44,6 +41,11 @@ Use the prompts and examples in this article to compile your findings into actio
 ## Launch Security Copilot in Microsoft Entra
 
 [!INCLUDE [Launch Security Copilot in Microsoft Entra](./includes/access-entra-copilot.md)]
+
+>[!NOTE]
+> If an action is blocked by insufficient permissions, a recommended role is displayed. You can use the following prompt in the Security Copilot chat to activate the required role. This is dependent on having an eligible role assignment that provides the necessary access.
+>
+> - *Activate the {required role} so that I can perform {the desired task}.*
 
 ## Understand tenant configuration
 
@@ -159,6 +161,12 @@ Use the following prompts to analyze your license allocation, usage patterns, an
 - *What is the usage of Microsoft Entra P1/P2 license?*
 - *Show me P1/P2 feature utilization.*
 - *Provide Microsoft Entra P1/P2 license usage details.*
+
+## Deactivate your role
+
+After completing your tasks with Microsoft Security Copilot, ensure that you deactivate any elevated roles you activated during your session to maintain security best practices. Use the following prompt to deactivate your role:
+
+- *I am done with my investigation or {desired task}, deactivate my access.*
 
 ## Related content
 
