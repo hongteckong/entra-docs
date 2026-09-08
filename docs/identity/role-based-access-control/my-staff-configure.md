@@ -41,7 +41,7 @@ To complete the steps in this article, you need the following resources and priv
 Access to My Staff is determined by administrative role assignment. Only users who are assigned an administrative role can access My Staff, and the administrative unit scope of that role assignment determines which users they can manage. After you configure administrative units and assign roles, those users can sign in to My Staff at [https://mystaff.microsoft.com](https://mystaff.microsoft.com).
 
 > [!NOTE]
-> The legacy My Apps and My Staff experience settings, such as **Administrators can access My Staff** under **Manage user feature settings**, are no longer used by the service and don't affect user behavior. These settings are being removed from the Microsoft Entra admin center. No administrator action is required.
+> The legacy My Apps and My Staff experience settings, such as **Administrators can access My Staff**, are no longer used by the service and don't affect user behavior. These settings are being removed from the Microsoft Entra admin center. No administrator action is required.
 
 ## Conditional Access
 
