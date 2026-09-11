@@ -137,7 +137,18 @@ Each result looks like this:
 
 A `testResult` value of `skipped` means a prerequisite wasn't met. For example, `User_Update_Manager_Test` is skipped when the manager attribute isn't in your target schema, and `Federated_Identity_Test` is skipped when OAuth isn't configured.
 
-### Understand what passing means
+## Troubleshoot common validation failures
+
+When a validation test fails, review the `provisioningErrorDetails`, `recommendationUrl`, and Logic App run details to understand the cause.
+
+| Failure area | Possible cause | Recommended action |
+| --- | --- | --- |
+| Authentication | Invalid bearer token | Verify credentials and rerun validation |
+| User creation | Required attributes missing | Review SCIM schema and mappings |
+| Group provisioning | Group endpoint not implemented | Verify SCIM group support |
+| SCIM compliance | Invalid SCIM response format | Review SCIM 2.0 requirements |
+
+## Understand what passing means
 
 All applicable tests must pass before you submit. These exceptions don't block onboarding:
 
