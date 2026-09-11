@@ -137,7 +137,18 @@ Each result looks like this:
 
 A `testResult` value of `skipped` means a prerequisite wasn't met. For example, `User_Update_Manager_Test` is skipped when the manager attribute isn't in your target schema, and `Federated_Identity_Test` is skipped when OAuth isn't configured.
 
-### Understand what passing means
+## Troubleshoot common validation failures
+
+When a validation test fails, review the `provisioningErrorDetails`, `recommendationUrl`, and Logic App run details to understand the cause.
+
+| Failure area | Possible cause | Recommended action |
+| --- | --- | --- |
+| Authentication | Invalid bearer token | Verify credentials and rerun validation |
+| User creation | Required attributes missing | Review SCIM schema and mappings |
+| Group provisioning | Group endpoint not implemented | Verify SCIM group support |
+| SCIM compliance | Invalid SCIM response format | Review SCIM 2.0 requirements |
+
+## Understand what passing means
 
 All applicable tests must pass before you submit. These exceptions don't block onboarding:
 
@@ -181,9 +192,9 @@ Submitting makes your results available to Microsoft and links them to your gall
 
     :::image type="content" source="media/validate-user-provisioning-app-gallery/submit-validation-results-blade.png" alt-text="Screenshot of the Submit validation results pane with the Submit validation results command highlighted." lightbox="media/validate-user-provisioning-app-gallery/submit-validation-results-blade.png":::
 
-1. On the **Validation results** tab, enter your submission request ID. This ID maps your validation results to your gallery submission. To find it, see [Publish your app to Microsoft Entra App Gallery](publish-app-gallery.md).
+1. On the **Validation results** tab, enter your Submission ID. This ID maps your validation results to your gallery submission. To find it, see [Publish your app to Microsoft Entra App Gallery](publish-app-gallery.md).
 
-    :::image type="content" source="media/validate-user-provisioning-app-gallery/validation-results-tab.png" alt-text="Screenshot of the Validation results tab showing the Submission request ID field and the Run a Logic App section." lightbox="media/validate-user-provisioning-app-gallery/validation-results-tab.png":::
+    :::image type="content" source="media/validate-user-provisioning-app-gallery/validation-results-tab.png" alt-text="Screenshot of the Validation results tab showing the Submission ID field and the Run a Logic App section." lightbox="media/validate-user-provisioning-app-gallery/validation-results-tab.png":::
 
 1. Under **Run a Logic App**, select **Yes**, and then enter the subscription, resource group, and name of the Logic App you used.
 

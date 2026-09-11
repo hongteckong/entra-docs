@@ -144,7 +144,7 @@ If the application supports single sign-on and user provisioning, provide the re
 
 The publishing experience prefills some application and publisher information from:
 
-- Information associated with your Microsoft Partner Network ID.
+- Information associated with your Microsoft Partner One ID (formerly Microsoft Partner Network (MPN) ID).
 - Application information and results from completed self-service validations.
 
 Review the prefilled information and complete any remaining required fields. This information can include application and publisher details, supported capabilities, application URLs, privacy and terms-of-use information, and customer support information.
