@@ -210,10 +210,7 @@ The expired-certificate scenario records evidence that your application rejects 
 > [!CAUTION]
 > This scenario interrupts sign-in for the application under test until you restore the working certificate. Run this test only against the non-gallery application created for this validation, and make sure the application is not being used by other users or workloads. 
 
-> [!IMPORTANT]
-> Before publishing this article, confirm the approved procedure for importing and activating an expired SAML signing certificate, the expected propagation time, and required cleanup steps with the Entra App Validator product team.
-
-After the approved procedure is available, use it to complete the following steps:
+Use the following steps to complete the validation:
 
 1. Open the enterprise application in the Microsoft Entra admin center.
 1. Select **Single sign-on** > **SAML Certificates**.
