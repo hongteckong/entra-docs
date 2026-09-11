@@ -156,6 +156,18 @@ Each SAML scenario follows the same process: choose a scenario, open your app, c
 
 Only the working-certificate and expired-certificate scenarios count toward SAML completion. Single Logout is optional and doesn't block submission.
 
+## Understand supported SAML capabilities and behaviors
+
+The validation results reflect the capabilities that your application supports and that you choose to test.
+Depending on your implementation, validated SAML capabilities can include:
+
+- IdP-initiated single sign-on
+- SP-initiated single sign-on
+- Single Logout (SLO)
+- Support for application-specific claims and user identifiers
+
+> Select only the capabilities that your application implements. Capabilities that aren't implemented or validated shouldn't be represented as supported functionality.
+
 ## Run IdP-initiated validation
 
 IdP-initiated sign-on starts from Microsoft Entra ID. The user selects the application tile in My Apps, and Microsoft Entra ID posts an unsolicited SAML response to the application's ACS URL.
@@ -212,6 +224,10 @@ After the approved procedure is available, use it to complete the following step
 1. Complete sign-in.
 1. Confirm that sign-in fails at your application.
 1. Restore the working certificate.
+
+> Expected result: The application should reject the sign-in attempt when the SAML assertion is signed with an expired certificate.
+>
+> If the application continues to authenticate users by using assertions signed with an expired certificate, review the certificate-validation logic in your application because this behavior can indicate a security or implementation issue.
 
 Note: For testing purposes, you can generate a self-signed certificate with an expiration date in the past and use it for this scenario. Import the certificate into SAML Certificates and make it active before you run the validation.
 Generate an expired self-signed certificate
