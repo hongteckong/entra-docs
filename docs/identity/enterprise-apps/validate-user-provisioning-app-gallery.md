@@ -192,9 +192,9 @@ Submitting makes your results available to Microsoft and links them to your gall
 
     :::image type="content" source="media/validate-user-provisioning-app-gallery/submit-validation-results-blade.png" alt-text="Screenshot of the Submit validation results pane with the Submit validation results command highlighted." lightbox="media/validate-user-provisioning-app-gallery/submit-validation-results-blade.png":::
 
-1. On the **Validation results** tab, enter your submission request ID. This ID maps your validation results to your gallery submission. To find it, see [Publish your app to Microsoft Entra App Gallery](publish-app-gallery.md).
+1. On the **Validation results** tab, enter your Submission ID. This ID maps your validation results to your gallery submission. To find it, see [Publish your app to Microsoft Entra App Gallery](publish-app-gallery.md).
 
-    :::image type="content" source="media/validate-user-provisioning-app-gallery/validation-results-tab.png" alt-text="Screenshot of the Validation results tab showing the Submission request ID field and the Run a Logic App section." lightbox="media/validate-user-provisioning-app-gallery/validation-results-tab.png":::
+    :::image type="content" source="media/validate-user-provisioning-app-gallery/validation-results-tab.png" alt-text="Screenshot of the Validation results tab showing the Submission ID field and the Run a Logic App section." lightbox="media/validate-user-provisioning-app-gallery/validation-results-tab.png":::
 
 1. Under **Run a Logic App**, select **Yes**, and then enter the subscription, resource group, and name of the Logic App you used.
 
